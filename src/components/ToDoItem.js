@@ -1,10 +1,13 @@
 import React from "react";
+import DoneItem from "./Item/DoneItem";
+import NotDoneItem from "./Item/NotDoneItem";
 import './ToDoItem.css'
 
 const ToDoItem = (props) => {
+
     return(
         <div id="ItemContainer">
-            <h3>{props.title}</h3>
+            {props.done ? <DoneItem item={props}/>: <NotDoneItem item={props}/>}
         </div>
     )
 }

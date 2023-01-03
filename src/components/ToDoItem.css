@@ -1,3 +1,6 @@
 #ItemContainer{
-    background-color: lightblue;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+
 }

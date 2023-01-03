@@ -7,7 +7,7 @@ const Header = () => {
         <div id="component">
             <form id="searchContainer">
             <input id="search" placeholder="Search..."/>
-            <button id="searchbtn"><ImSearch /></button>
+            <button id="searchbtn"><ImSearch size={19}/></button>
             </form>
             <div id="mid"></div>
             <div id="profile">

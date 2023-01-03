@@ -5,10 +5,9 @@ import './ListToDoItems.css'
 const ListToDoItems = (props) => {
     const doneitems = props.itemlist.itemlist.filter((item) => item.done);
     const notdoneitems = props.itemlist.itemlist.filter((item) => !item.done);
-    console.log(doneitems);
-    console.log(notdoneitems);
     return(
         <div id="ListContainer">
+            <div id ="notDoneList">
             {notdoneitems.map((item) => (
                 <ToDoItem 
                     key={item.id}
@@ -17,6 +16,8 @@ const ListToDoItems = (props) => {
                     done={item.done}
                 />
             ))}
+            </div>
+            <div id ="doneList">
             {doneitems.map((item) => (
                 <ToDoItem 
                     key={item.id}
@@ -25,6 +26,7 @@ const ListToDoItems = (props) => {
                     done={item.done}
                 />
             ))}
+            </div>
         </div>
     )
 }

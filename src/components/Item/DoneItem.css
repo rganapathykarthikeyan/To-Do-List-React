@@ -1,0 +1,37 @@
+#ItemContainer{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    border: 0.5px solid gray;
+}
+
+i{
+    height: 30px;
+    width: 30px;
+    color: black;
+}
+
+#doneTick{
+    width: 50px;
+    border-right: 0.5px solid gray;
+    display: flex;
+    align-items: center;
+    border-bottom: transparent;
+    border-top: transparent;
+    border-left:transparent;
+    justify-content: center;
+    color: lime;
+    size: 20px;
+    background: transparent;
+    cursor: pointer;
+}
+
+#title{
+    width: auto;
+    display: inherit;
+    align-items: center;
+    padding-left: 10px;
+}

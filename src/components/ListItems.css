@@ -1,7 +1,6 @@
 #wholeContain {
-    background-color: lightblue;
+    background-color: rgba(205, 204, 204, 0.592);
     display: flex;
-    margin-top: 15px;
     height: 86vh;
     align-items: center;
     justify-content: center;
@@ -10,7 +9,7 @@
 
 #container{
     display: inherit;
-    background-color: lightcoral;
+    background-color: white;
     flex-direction: column;
     height: 70%;
     width: 70%;
@@ -22,6 +21,8 @@
 label{
     font-size: 40px;
     font-family: Comic Sans MS;
+    color: lime;
+    padding:20px;
 }
 
 #containfooter{
