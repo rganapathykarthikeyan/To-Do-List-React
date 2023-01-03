@@ -1,0 +1,35 @@
+#wholeContain {
+    background-color: lightblue;
+    display: flex;
+    margin-top: 15px;
+    height: 86vh;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+#container{
+    display: inherit;
+    background-color: lightcoral;
+    flex-direction: column;
+    height: 70%;
+    width: 70%;
+    box-shadow: 5px 5px 35px grey;
+    justify-content: space-between;
+    border-radius: 25px;
+}
+
+label{
+    font-size: 40px;
+    font-family: Comic Sans MS;
+}
+
+#containfooter{
+    background-color: lime;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 40px 0 40px;
+    overflow: hidden;
+    border-radius: 0 0 25px 25px ;
+}
