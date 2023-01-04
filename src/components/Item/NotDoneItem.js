@@ -8,7 +8,6 @@ const NotDoneItem = (props) => {
 
     const ChangeDoneState = () => {
         props.OnDone(props.id)
-        console.log(props.id)
     }
     return(
         <form id="ItemContainer">

@@ -33,10 +33,16 @@ const DummyList = [
 function App() {
   const [todolistitems, settodolistitems] = useState(DummyList);
 
+  const addTodoItem = (todoitem) =>{
+    settodolistitems((prevlist) => {
+      return [...prevlist, todoitem];
+    });
+  }
+
   return (
     <div className="App">
       <Header></Header>
-      <ListItems itemlist={todolistitems}></ListItems>
+      <ListItems itemlist={todolistitems} addTodoItemHandler = {addTodoItem}></ListItems>
     </div>
   );
 }

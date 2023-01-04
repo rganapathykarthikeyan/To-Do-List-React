@@ -7,8 +7,8 @@ import './DoneItem.css'
 const DoneItem = (props) => {
 
     const ChangeDoneState = () => {
-        props.OnDone(props.id)
-        console.log(props.id)
+        props.OnDone(props.id);
+
     }
 
     return(

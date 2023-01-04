@@ -13,7 +13,6 @@ const ListToDoItems = (props) => {
     }
     const [refresh, onrefresh] = useState(false);
     const changeDoneState = (prop) => {
-        console.log(prop);
         for (let i = 0; i < props.itemlist.itemlist.length; i++) {
             if(props.itemlist.itemlist[i].id === prop){
                 props.itemlist.itemlist[i].done = !props.itemlist.itemlist[i].done;
@@ -21,9 +20,6 @@ const ListToDoItems = (props) => {
         }
         onrefresh(!refresh);
     }
-
-    console.log(doneitems.length);
-    console.log(notdoneitems.length);
 
     return(
         <div id="ListContainer">
