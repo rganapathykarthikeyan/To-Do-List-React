@@ -11,7 +11,7 @@ const Header = () => {
             </form>
             <div id="mid"></div>
             <div id="profile">
-            <h3>Marko Velickovica</h3>
+            <h3>GK</h3>
             <img src='https://wallpapercave.com/wp/fWJXIRQ.png' id="photo"></img></div>
         </div>
     )
