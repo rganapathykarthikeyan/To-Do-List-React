@@ -29,9 +29,28 @@ i{
     cursor: pointer;
 }
 
-#title{
+#titles{
     width: auto;
     display: inherit;
     align-items: center;
-    padding-left: 10px;
+    padding-left: 15px;
+    flex: 6;
+}
+
+#endl{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+}
+
+#delete{
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+    background-color: transparent;
+    border: 0.5px solid transparent;
+    color: gray;
+    cursor: pointer;
+
 }

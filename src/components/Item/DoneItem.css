@@ -34,4 +34,19 @@ i{
     display: inherit;
     align-items: center;
     padding-left: 10px;
+    flex:10;
+}
+
+#end{
+    display: inherit;
+    align-items: center;
+    flex:1;
+    color: gray;
+}
+
+#del{
+    color: gray;
+    background: transparent;
+    border: 1px transparent;
+    cursor: pointer;
 }

@@ -5,7 +5,7 @@
     overflow:scroll;
     scrollbar-width: none;
     -ms-overflow-style: none; 
-    padding: 10px 0 10px 0 ;
+    padding: 10px 0 0 0 ;
     
 }
 
@@ -21,7 +21,7 @@
     overflow:scroll;
     scrollbar-width: none;
     -ms-overflow-style: none;
-    
+    background-color: rgba(186, 186, 186, 0.09);
     
 }
 #gap{
@@ -46,4 +46,34 @@
 
 #notDoneList::-webkit-scrollbar {
     display: none;
+}
+
+#showDone{
+    color: lime;
+    background-color: transparent;
+    border-top: 0.5px black;
+    border-left: 0.5px transparent;
+    border-right: transparent;
+    border-bottom: transparent;
+    padding: 5px;
+    cursor: pointer;
+}
+
+#trigger {
+    color: lime;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#noPending {
+    color: lime;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-size: larger;
+    font-weight: bold;
+    padding: 15px;
 }

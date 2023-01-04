@@ -1,10 +1,16 @@
 #wholeContain {
     background-color: rgba(205, 204, 204, 0.592);
     display: flex;
-    height: 86vh;
+    height: 100vh;
     align-items: center;
     justify-content: center;
-    
+    scrollbar-width: none;
+    -ms-overflow-style: none; 
+    overflow: scroll;
+}
+
+#wholeContain::-webkit-scrollbar {
+    display: none;
 }
 
 #container{
