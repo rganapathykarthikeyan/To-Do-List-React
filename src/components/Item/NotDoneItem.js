@@ -9,6 +9,11 @@ const NotDoneItem = (props) => {
     const ChangeDoneState = () => {
         props.OnDone(props.id)
     }
+
+    const DelItem = () => {
+        props.onDel(props.id);
+    }
+
     return(
         <form id="ItemContainer">
             <button id="Ticks" type="button" onClick={ChangeDoneState}><BsCheck2 size={35}/></button>
@@ -17,7 +22,7 @@ const NotDoneItem = (props) => {
             </div>
             <div id="endl">
                 <h4><BiTime size={20} style={{color:'lime'}}/>  {props.deadline} </h4>
-                <button id="delete"><RxCross1 size={20}/></button>
+                <button id="delete" type="submit" onClick={DelItem}><RxCross1 size={20}/></button>
             </div>
         </form>
     )

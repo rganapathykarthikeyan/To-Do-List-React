@@ -21,6 +21,17 @@ const ListToDoItems = (props) => {
         onrefresh(!refresh);
     }
 
+    const onItemDelete = (prop) => {
+        for (let i = 0; i < props.itemlist.itemlist.length;i++) {
+            if(props.itemlist.itemlist[i].id === prop){
+                props.itemlist.itemlist.splice(i,1);
+                break;
+            }
+        }
+        console.log(props.itemlist.itemlist);
+        onrefresh(!refresh);
+    }
+
     return(
         <div id="ListContainer">
             <div id ="notDoneList">
@@ -33,6 +44,7 @@ const ListToDoItems = (props) => {
                     deadline={item.deadline}
                     done={item.done}
                     OnDone={changeDoneState}
+                    onDel = {onItemDelete}
                 />
             ))}
             </div>
@@ -45,6 +57,7 @@ const ListToDoItems = (props) => {
                     deadline={item.deadline}
                     done={item.done}
                     OnDone={changeDoneState}
+                    onDel = {onItemDelete}
                 />
             ))}
             </div> : <div></div>}

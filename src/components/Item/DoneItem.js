@@ -8,7 +8,10 @@ const DoneItem = (props) => {
 
     const ChangeDoneState = () => {
         props.OnDone(props.id);
+    }
 
+    const DelItem = () => {
+        props.onDel(props.id);
     }
 
     return(
@@ -18,7 +21,7 @@ const DoneItem = (props) => {
             <h2>{props.title}</h2>
             </div>
             <div id="end">
-                <button id="del"><BsTrash size={20}/></button>
+                <button id="del" type="submit" onClick={DelItem}><BsTrash size={20}/></button>
             </div>
         </form>
     )
