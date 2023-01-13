@@ -1,32 +1,50 @@
-import React, { useState, useRef } from "react";
+import React, { useState,useEffect } from "react";
 import './ListItems.css';
 import ListToDoItems from "../components/ListToDoItems";
 
 const ListItems = (props) => {
 
     const [addItems,onAddItems] = useState(false);
+    const [etitle, setTitle] = useState('');
+    const [edeadline, setDeadline] = useState('');
     const [newid, setNewId] = useState(5);
-    const titleRef = useRef();
-    const deadlineRef = useRef();
+    const [disable, setDisable] = useState(true);
 
+    const titleChangeHandler = (event) => {
+        setTitle(event.target.value);
+    }
+
+    const deadlineChangeHandler = (event) => {
+        setDeadline(event.target.value);
+    }
+
+    useEffect(()=>{
+        if(etitle.trim().length > 1 && edeadline.trim().length > 0){
+            setDisable(false);
+        }
+        else{
+            setDisable(true);
+        }
+    },[etitle, edeadline])
 
     const AddScreenShow = () => {
         onAddItems(true);
     }
 
+
+
     const submitHandler = (event) => {
         event.preventDefault();
-        const enteredtitle = titleRef.current.value;
-        const entereddeadline = deadlineRef.current.value;
+
         const todoitem = {
             id: newid,
-            title: enteredtitle,
-            deadline : entereddeadline,
+            title: etitle,
+            deadline : edeadline,
             done : false,
         }
         props.addTodoItemHandler(todoitem);
-        titleRef.current.value = "";
-        deadlineRef.current.value = "";
+        setTitle('');
+        setDeadline('');
         onAddItems(false);
         setNewId(newid+1);
     }
@@ -39,9 +57,9 @@ const ListItems = (props) => {
                 <div id="containfooter">
                     {addItems ? 
                     <form id ="AddItemsContainer" onSubmit={submitHandler}>
-                        <input type="text" placeholder="Task to do" ref={titleRef} id="titleinp"/>
-                        <input type="text" placeholder="DeadLine" ref={deadlineRef} id="deadlineinp"/>
-                        <button type="submit" id="subbtn">Submit</button>
+                        <input type="text" placeholder="Task to do" onChange={titleChangeHandler} id="titleinp"/>
+                        <input type="text" placeholder="DeadLine" onChange={deadlineChangeHandler} id="deadlineinp"/>
+                        <button type="submit" disabled={disable} id="subbtn">Submit</button>
                     </form> : 
                     <div id="DoAddContainer">
                         <h3>What to do today? Add Now</h3>
