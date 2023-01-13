@@ -1,21 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import './ListItems.css';
 import ListToDoItems from "../components/ListToDoItems";
 
 const ListItems = (props) => {
 
     const [addItems,onAddItems] = useState(false);
-    const [etitle, setTitle] = useState('');
-    const [edeadline, setDeadline] = useState('');
     const [newid, setNewId] = useState(5);
+    const titleRef = useRef();
+    const deadlineRef = useRef();
 
-    const titleChangeHandler = (event) => {
-        setTitle(event.target.value);
-    }
-
-    const deadlineChangeHandler = (event) => {
-        setDeadline(event.target.value);
-    }
 
     const AddScreenShow = () => {
         onAddItems(true);
@@ -23,16 +16,17 @@ const ListItems = (props) => {
 
     const submitHandler = (event) => {
         event.preventDefault();
-
+        const enteredtitle = titleRef.current.value;
+        const entereddeadline = deadlineRef.current.value;
         const todoitem = {
             id: newid,
-            title: etitle,
-            deadline : edeadline,
+            title: enteredtitle,
+            deadline : entereddeadline,
             done : false,
         }
         props.addTodoItemHandler(todoitem);
-        setTitle('');
-        setDeadline('');
+        titleRef.current.value = "";
+        deadlineRef.current.value = "";
         onAddItems(false);
         setNewId(newid+1);
     }
@@ -45,8 +39,8 @@ const ListItems = (props) => {
                 <div id="containfooter">
                     {addItems ? 
                     <form id ="AddItemsContainer" onSubmit={submitHandler}>
-                        <input type="text" placeholder="Task to do" onChange={titleChangeHandler} id="titleinp"/>
-                        <input type="text" placeholder="DeadLine" onChange={deadlineChangeHandler} id="deadlineinp"/>
+                        <input type="text" placeholder="Task to do" ref={titleRef} id="titleinp"/>
+                        <input type="text" placeholder="DeadLine" ref={deadlineRef} id="deadlineinp"/>
                         <button type="submit" id="subbtn">Submit</button>
                     </form> : 
                     <div id="DoAddContainer">

@@ -28,7 +28,6 @@ const ListToDoItems = (props) => {
                 break;
             }
         }
-        console.log(props.itemlist.itemlist);
         onrefresh(!refresh);
     }
 
