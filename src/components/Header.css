@@ -5,19 +5,26 @@
     padding: 10px;
     box-shadow: 1px 3px 15px grey;
 }
+#component.dark{
+    background-color: #1e1e1e;
+}
 #profile{
     display: flex;
     padding-right: 50px;
     flex:1
 }
-h3{
+.userName{
     padding: 10px;
+    color: black;
+}
+.userName.dark{
+    color: #cce6ff;
 }
 #mid{
     flex: 2;
 }
 #searchContainer{
-    background-color: white;
+    background-color: transparent;
     height: 30px;
     padding: 10px;
     border: 1px solid lightgray;
@@ -26,6 +33,7 @@ h3{
     flex: 1;
     justify-content: space-between;
 }
+
 #searchbtn{
     overflow: hidden;
     margin: 0;
@@ -36,6 +44,9 @@ h3{
     cursor: pointer;
     opacity: 0.7;
     background: transparent;
+}
+#searchbtn.dark{
+    color: #cce6ff;
 }
 #searchbtn:hover{
     opacity: 1;
@@ -51,6 +62,10 @@ h3{
     height: 80%;
     border: 1px solid transparent;
     border-radius: inherit;
+    background-color: transparent;
+}
+#search.dark{
+    color: #cce6ff;
 }
 img{
     height: 60px;
@@ -58,4 +73,17 @@ img{
     align-self: center;
     border-radius: 75%;
     margin-left: 10%;
+}
+
+.themebtn{
+    padding: 15px;
+    margin: 10px;
+    margin-left: 25px;
+    background-color: transparent;
+    border-radius: 25px;
+}
+
+.themebtn.dark{
+    border-color: white;
+    color: white;
 }

@@ -7,11 +7,6 @@
     border: 0.5px solid gray;
 }
 
-i{
-    height: 30px;
-    width: 30px;
-    color: black;
-}
 
 #Ticks{
     width: 50px;
@@ -28,6 +23,10 @@ i{
     cursor: pointer;
 }
 
+#titles.dark{
+    color: #c4c9cd;
+}
+
 #titles{
     width: auto;
     display: inherit;
@@ -36,11 +35,27 @@ i{
     flex: 6;
 }
 
+#titles.dark{
+    color: #cce6ff;
+}
+
 #endl{
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex: 1;
+}
+
+#endl.dark{
+    color: #cce6ff;
+}
+
+#clock{
+    color:lime
+}
+
+#clock.dark{
+    color: #ffff0e;
 }
 
 #delete{
@@ -51,5 +66,5 @@ i{
     border: 0.5px solid transparent;
     color: gray;
     cursor: pointer;
-
 }
+

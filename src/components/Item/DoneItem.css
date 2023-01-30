@@ -6,11 +6,8 @@
     padding: 0;
     border: 0.5px solid gray;
 }
-
-i{
-    height: 30px;
-    width: 30px;
-    color: black;
+#ItemContainer.dark{
+    color: #cce6ff;
 }
 
 #doneTick{
@@ -27,6 +24,9 @@ i{
     background: transparent;
     cursor: pointer;
 }
+#doneTick.dark{
+    color: #ffff0e;
+}
 
 #title{
     width: auto;
@@ -34,6 +34,9 @@ i{
     align-items: center;
     padding-left: 10px;
     flex:10;
+}
+#title.dark{
+    color: #cce6ff;
 }
 
 #end{

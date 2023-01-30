@@ -2,6 +2,7 @@ import './App.css';
 import Header from './components/Header';
 import ListItems from './components/ListItems';
 import { useState } from 'react';
+import DataProvider from './store/dataProvider';
 
 const DummyList = [
   {
@@ -41,8 +42,10 @@ function App() {
 
   return (
     <div className="App">
+      <DataProvider>
       <Header />
       <ListItems itemlist={todolistitems} addTodoItemHandler = {addTodoItem}></ListItems>
+      </DataProvider>
     </div>
   );
 }

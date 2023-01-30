@@ -12,6 +12,9 @@
     -ms-overflow-style: none; 
     overflow: scroll;
 }
+#wholeContain.dark{
+    background-color: #3b3b3b;
+}
 
 #wholeContain::-webkit-scrollbar {
     display: none;
@@ -27,12 +30,23 @@
     justify-content: space-between;
     border-radius: 25px;
 }
+#container.dark{
+    background-color: #1e1e1e;
+}
+
 
 label{
     font-size: 40px;
     font-family: Comic Sans MS;
     color: lime;
     padding:20px;
+}
+label.dark{
+    color: #4e91cf;
+}
+
+#addlabel.dark{
+    color: #1e1e1e;
 }
 
 #containfooter{
@@ -42,6 +56,10 @@ label{
     padding: 0 40px 0 40px;
     overflow: hidden;
     border-radius: 0 0 25px 25px ;
+}
+
+#containfooter.dark{
+    background-color: #cce6ff;
 }
 
 #DoAddContainer{
@@ -55,11 +73,16 @@ label{
     font-size: 20px;
 }
 
+
+
 #addbtn{
     color: white;
     font-size: 35px;
     background-color: transparent;
     cursor: pointer;
+}
+#addbtn.dark{
+    color: #1e1e1e;
 }
 
 #AddItemsContainer{
@@ -81,6 +104,10 @@ label{
     border: none;
     border-bottom: 1px solid white;
 }
+#titleinp.dark{
+    color: #1e1e1e;
+    border-bottom: 1px solid #1e1e1e;
+}
 #deadlineinp{
     height: 40px;
     width: 240px;
@@ -91,6 +118,10 @@ label{
     border: none;
     border-bottom: 1px solid white;
 }
+#deadlineinp.dark{
+    color: #1e1e1e;
+    border-bottom: 1px solid #1e1e1e;
+}
 
 #subbtn {
     background-color: transparent;
@@ -100,4 +131,8 @@ label{
     border-radius: 25px;
     border-color: white;
     color: white;
+}
+#subbtn.dark{
+    color: #1e1e1e;
+    border-color: #1e1e1e;
 }

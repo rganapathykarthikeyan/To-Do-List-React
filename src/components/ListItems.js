@@ -1,9 +1,12 @@
-import React, { useState,useEffect } from "react";
+import React, { useState,useEffect, useContext } from "react";
 import './ListItems.css';
 import ListToDoItems from "../components/ListToDoItems";
+import DataContext from "../store/dataContext";
 
 const ListItems = (props) => {
-
+    const DataCxt = useContext(DataContext);
+    const curtheme = DataCxt.theme;
+    const themename = (curtheme === "LIGHT") ? "" : "dark"
     const [addItems,onAddItems] = useState(false);
     const [etitle, setTitle] = useState('');
     const [edeadline, setDeadline] = useState('');
@@ -50,20 +53,20 @@ const ListItems = (props) => {
     }
 
     return(
-        <div id="wholeContain">
-            <div id="container">
-                <label>Today</label>
+        <div id="wholeContain" className={themename}>
+            <div id="container" className={themename}>
+                <label className={themename}>Today</label>
                 <ListToDoItems itemlist={props}/>
-                <div id="containfooter">
+                <div id="containfooter" className={themename}>
                     {addItems ? 
                     <form id ="AddItemsContainer" onSubmit={submitHandler}>
-                        <input type="text" placeholder="Task to do" onChange={titleChangeHandler} id="titleinp"/>
-                        <input type="text" placeholder="DeadLine" onChange={deadlineChangeHandler} id="deadlineinp"/>
-                        <button type="submit" disabled={disable} id="subbtn">Submit</button>
+                        <input type="text" placeholder="Task to do" onChange={titleChangeHandler} id="titleinp" className={themename}/>
+                        <input type="text" placeholder="DeadLine" onChange={deadlineChangeHandler} id="deadlineinp" className={themename}/>
+                        <button type="submit" disabled={disable} id="subbtn" className={themename}>Submit</button>
                     </form> : 
-                    <div id="DoAddContainer">
-                        <h3>What to do today? Add Now</h3>
-                        <button id="addbtn" type="button" onClick={AddScreenShow}>&gt;&gt;</button>
+                    <div id="DoAddContainer" >
+                        <h3 id="addlabel"className={themename}>What to do today? Add Now</h3>
+                        <button id="addbtn" type="button" onClick={AddScreenShow} className={themename}>&gt;&gt;</button>
                     </div>
                     }
                 </div>
