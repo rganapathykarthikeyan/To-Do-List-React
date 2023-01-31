@@ -9,8 +9,16 @@ const ListToDoItems = (props) => {
   const DataCxt = useContext(DataContext);
   const curtheme = DataCxt.theme;
   const themename = curtheme === "LIGHT" ? "" : "dark";
-  const doneitems = props.itemlist.itemlist.filter((item) => item.done);
-  const notdoneitems = props.itemlist.itemlist.filter((item) => !item.done);
+  let filteredItemList = {}
+  console.log(DataCxt.search)
+  if(DataCxt.search !== ""){
+    filteredItemList = props.itemlist.itemlist.filter(item => item.title.includes(DataCxt.search))
+  }
+  else{
+    filteredItemList = props.itemlist.itemlist
+  }
+  const doneitems = filteredItemList.filter((item) => item.done);
+  const notdoneitems = filteredItemList.filter((item) => !item.done);
   const [showdone, ChangeShowdone] = useState(false);
   const changeshowstate = () => {
     ChangeShowdone(!showdone);

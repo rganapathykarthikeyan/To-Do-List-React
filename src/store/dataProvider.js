@@ -4,6 +4,7 @@ import DataContext from "./dataContext";
 
 const DataProvider = (props) => {
     const [curtheme, themeHandler] = useState("LIGHT");
+    const [search, searchHandler] = useState("");
     const toggleTheme = () => {
         if(curtheme === "LIGHT"){
             themeHandler("DARK");
@@ -12,9 +13,14 @@ const DataProvider = (props) => {
             themeHandler("LIGHT");
         }
     }
+    const setSearchText = (text) => {
+        searchHandler(text);
+    }
     const dataContext = {
         theme: curtheme,
+        search: search,
         toggletheme: toggleTheme,
+        searchText: setSearchText,
     };
 
     return(

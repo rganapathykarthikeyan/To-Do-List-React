@@ -2,7 +2,9 @@ import React from "react";
 
 const DataContext = React.createContext({
     theme: "",
-    toggletheme: (curtheme) => {}
+    search: "",
+    toggletheme: (curtheme) => {},
+    searchText: (searchText) => {},
 })
 
 export default DataContext;

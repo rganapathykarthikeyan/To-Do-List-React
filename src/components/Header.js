@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import "./Header.css";
 import { ImSearch } from "react-icons/im";
 import DataContext from "../store/dataContext";
@@ -7,11 +7,18 @@ const Header = () => {
   const DataCxt = useContext(DataContext);
   const curtheme = DataCxt.theme;
   const themename = (curtheme === "LIGHT") ? "" : "dark"
+  const [searchText, setSearchText] = useState('')
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    DataCxt.searchText(searchText);
+  }
+
   return (
     <div id="component" className={themename}>
-      <form id="searchContainer">
-        <input id="search" placeholder="Search..." className={themename}/>
-        <button id="searchbtn" className={themename}>
+      <form id="searchContainer" onSubmit={submitHandler}>
+        <input id="search" placeholder="Search..." className={themename} onChange={(e) => {setSearchText(e.target.value)}}/>
+        <button id="searchbtn" className={themename} >
           <ImSearch size={19} />
         </button>
       </form>
