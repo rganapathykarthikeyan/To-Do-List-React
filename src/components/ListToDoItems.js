@@ -7,11 +7,14 @@ import DataContext from "../store/dataContext";
 
 const ListToDoItems = (props) => {
   const DataCxt = useContext(DataContext);
+  const [refresh, onrefresh] = useState(false);
+  const [showdone, ChangeShowdone] = useState(false);
+
   const curtheme = DataCxt.theme;
   const themename = curtheme === "LIGHT" ? "" : "dark";
   let filteredItemList = {}
   console.log(DataCxt.search)
-  if(DataCxt.search !== ""){
+  if(DataCxt.search.length> 0){
     filteredItemList = props.itemlist.itemlist.filter(item => item.title.includes(DataCxt.search))
   }
   else{
@@ -19,11 +22,10 @@ const ListToDoItems = (props) => {
   }
   const doneitems = filteredItemList.filter((item) => item.done);
   const notdoneitems = filteredItemList.filter((item) => !item.done);
-  const [showdone, ChangeShowdone] = useState(false);
+
   const changeshowstate = () => {
     ChangeShowdone(!showdone);
   };
-  const [refresh, onrefresh] = useState(false);
   const changeDoneState = (prop) => {
     for (let i = 0; i < props.itemlist.itemlist.length; i++) {
       if (props.itemlist.itemlist[i].id === prop) {
@@ -32,7 +34,6 @@ const ListToDoItems = (props) => {
     }
     onrefresh(!refresh);
   };
-
   const onItemDelete = (prop) => {
     for (let i = 0; i < props.itemlist.itemlist.length; i++) {
       if (props.itemlist.itemlist[i].id === prop) {

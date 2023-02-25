@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import "./Header.css";
 import { ImSearch } from "react-icons/im";
 import DataContext from "../store/dataContext";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const DataCxt = useContext(DataContext);
@@ -32,6 +33,7 @@ const Header = () => {
         ></img>
         <button className={`themebtn ${themename}`}  onClick={DataCxt.toggletheme}> Switch to {curtheme === "LIGHT" ? "Dark" : "Light"} Mode</button>
       </div>
+      <Link to="/new" className={`newLink ${themename}`}>New Design</Link>
     </div>
   );
 };
