@@ -67,6 +67,11 @@
 #search.dark{
     color: #cce6ff;
 }
+
+#search:focus{
+    outline: none;
+}
+
 img{
     height: 60px;
     width: 60px;
